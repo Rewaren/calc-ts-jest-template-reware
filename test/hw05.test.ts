@@ -36,4 +36,8 @@ describe('HW05 Functions testing', () => {
         expect(compareStrings("apple", "APPLE")).toBeFalsy()
     })
 
+    test('return true for positive integer number', () => {
+        expect(isPositive(5)).toBeTruthy()
+    })
+
 })
