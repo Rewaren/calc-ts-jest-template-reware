@@ -51,7 +51,7 @@ describe('HW05 Functions testing', () => {
         expect(isPositive(5)).toBeTruthy()
     })
     test('return false for negative integer number', () => {
-        expect(isPositive(-1)).toBeTruthy()
+        expect(isPositive(-1)).toBeFalsy()
     })
     test('return true for zero', () => {
         expect(isPositive(0)).toBeTruthy()
