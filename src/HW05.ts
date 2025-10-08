@@ -3,8 +3,11 @@ export function multiply(a: number, b: number): number {
 }
 
 export function calculatePercentage(part: number, total: number): string {
-    const percentage = (part / total) * 100;
-    return `${percentage.toFixed(2)}%`;
+    if (total > 0 && part > 0) {
+        const percentage = (part / total) * 100;
+        return `${percentage.toFixed(2)}%`;
+    }
+    return "Input contains negative number."
 
 }
 
@@ -17,7 +20,7 @@ export function compareStrings(text1: string, text2: string): boolean{
 }
 
 export function isPositive(num: number): boolean{
-    return num > 0;
+    return num >= 0;
 }
 
 console.log(calculatePercentage(2, 10)) // 20.00%
