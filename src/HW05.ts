@@ -4,8 +4,8 @@ export function multiply(a: number, b: number): number {
 
 export function calculatePercentage(part: number, total: number): string {
     const percentage = (part / total) * 100;
-    const formatted = `${percentage.toFixed(2)}%`;
-    return formatted;
+    return `${percentage.toFixed(2)}%`;
+
 }
 
 export function isEven(num: number): boolean {
