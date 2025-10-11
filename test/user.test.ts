@@ -25,10 +25,23 @@ test('Verify user over 18 is given consent', ()=> {
     const consentGiven = user1.verifyConsent();
     expect(consentGiven).toBeTruthy();
 })
-// check age is < 0
 
+test('Verify user age is < 0', ()=> {
+    const user1 = new User("John", "Doe", false, -5);
+    const userAge = user1.age;
+    expect(userAge).toBe(0);
+})
 
-// check user age == 0
+test('Verify user age is 0', ()=> {
+    const user1 = new User("John", "Doe", false, 0);
+    const userAge = user1.age;
+    expect(userAge).toBe(0);
+})
 
-
-// check user has revoked consent
+test('Verify user has revoked consent', ()=> {
+    const user1 = new User("John", "Doe", false, 20);
+    user1.giveConsent(); //turn isConsent=true
+    user1.revokeConsent(); //turn isConsent=false
+    const consentGiven = user1.verifyConsent();
+    expect(consentGiven).toBeFalsy();
+})
