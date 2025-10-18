@@ -32,6 +32,23 @@ export class DepositContract extends BaseContract {
     }
 }
 
+export class LoanContract extends BaseContract {
+    loanAmount: number;
+    monthlyPayment: number;
+    loanTermMonths: number;
+
+    constructor(contractid: string, clientName: string, isActive: boolean, loanAmount: number, monthlyPayment: number, loanTermMonths: number) {
+        super(contractid, clientName, isActive);
+        this.loanAmount = loanAmount;
+        this.monthlyPayment = monthlyPayment;
+        this.loanTermMonths = loanTermMonths;
+    }
+
+    calculateTotalPayment(): number {
+        return this.monthlyPayment * this.loanTermMonths;
+    }
+}
+
 export class InsuranceContract extends BaseContract {
     insuranceType: string;
     premium: number;
